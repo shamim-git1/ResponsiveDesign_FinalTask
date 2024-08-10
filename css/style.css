@@ -1,0 +1,131 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+   font-family: 'vazir-Medium';
+   src:  url('/assets/fonts/Vazir-Medium.woff') format('woff');
+ }
+
+ @font-face {
+   font-family: 'vazir-Bold';
+   src:  url('/assets/fonts/Vazir-Bold.woff') format('woff');
+ }
+
+/* ROOT */
+
+:root{
+   --color-primary:#234894;
+   --color-date:#696969;
+   --color-number__bgc: #AFCEDD;
+   --color-number:#234894;
+   --color-btn:#219F95;
+
+}
+
+/* SECTION */
+
+.block-task{
+   font-family: "vazir-Medium";
+   font-size: 1rem;
+}
+
+.task{
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 2rem;
+} 
+
+ .task-item{
+    background-color:bisque;
+ }
+
+ @media screen and (min-width:768px){
+   .task{
+      grid-template-columns: repeat(2, 3fr);
+   }
+ }
+
+ @media screen and (min-width:1024px) {
+    .task{
+        grid-template-columns: repeat(3, 2fr);
+    }  
+ }
+
+
+/* HEADER */
+
+.task-header{
+   display: flex;
+   /* justify-content:space-between; */
+   align-items: center;
+}
+
+.task-header .number{
+   color: var(--color-number);
+   background-color:var(--color-number__bgc) ;
+   width: 40px;
+   height: 40px;
+   border-radius: 6px;
+   text-align: center;
+   padding-top: 0.50rem;
+}
+.task-header .label{
+   color: var(--color-primary);
+   padding-left: 12.5rem;
+}
+
+.task-header .date{
+   font-size: 0.75rem;
+   color: var(--color-date);
+}
+
+/* MAIN */
+
+.task-main{
+   padding: 0.5rem;
+}
+.task-main .main__text{
+   font-size: 0.65rem;
+   color: var(--color-date);
+}
+
+/* FOOTER */
+
+.task-footer .footer{
+   display: flex;
+   /* justify-content: space-between; */
+   align-items: center;
+}
+
+
+.avatar{
+   width: 40px;
+   height: 40px;
+   border: 2px solid #fff;
+   border-radius: 32px;
+}
+
+.text{
+   margin-left: 11rem;
+}
+
+.task-footer .btn{
+   background-color: var(--color-btn);
+   color: #fff;
+   padding: 1.5rem 2.5rem;
+   margin:  1rem 1rem;
+   width: 50px;
+   height: 50px;
+   border-radius: 8px;
+   border: 0;
+   outline: 0;
+   cursor: pointer;
+   text-align: center;
+   white-space: nowrap;
+   font-size: 1rem;
+}
