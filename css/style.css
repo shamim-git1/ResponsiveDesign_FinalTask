@@ -1,3 +1,6 @@
+
+@import url(fonts.css);
+
 *,
 *::before,
 *::after{
@@ -6,15 +9,13 @@
     margin: 0;
 }
 
-@font-face {
-   font-family: 'vazir-Medium';
-   src:  url('/assets/fonts/Vazir-Medium.woff') format('woff');
- }
+html{
+   font-size: 62.5%;
+}
 
- @font-face {
-   font-family: 'vazir-Bold';
-   src:  url('/assets/fonts/Vazir-Bold.woff') format('woff');
- }
+body{
+font-size: 1.2rem;
+}
 
 /* ROOT */
 
@@ -24,6 +25,15 @@
    --color-number__bgc: #AFCEDD;
    --color-number:#234894;
    --color-btn:#219F95;
+   --color-gray-300:#ccc;
+   --color-avatar:#fff;
+   /* BORDER RADIUS */
+   --border-radius-sm:0.5rem;
+   --border-radius-md:0.8rem;
+   --border-radius-lg:1rem;
+   /* BORDER */
+   --border-primary: 2px solid var(--color-gray-300);
+
 
 }
 
@@ -31,7 +41,7 @@
 
 .block-task{
    font-family: "vazir-Medium";
-   font-size: 1rem;
+   padding: 3rem;
 }
 
 .task{
@@ -40,9 +50,15 @@
    gap: 2rem;
 } 
 
- .task-item{
-    background-color:bisque;
- }
+.task-item{
+   
+   padding:0.5rem 1rem;
+}
+
+p{
+   margin-bottom: 3rem;
+}
+
 
  @media screen and (min-width:768px){
    .task{
@@ -61,8 +77,8 @@
 
 .task-header{
    display: flex;
-   /* justify-content:space-between; */
    align-items: center;
+   gap: 1rem;
 }
 
 .task-header .number{
@@ -70,27 +86,29 @@
    background-color:var(--color-number__bgc) ;
    width: 40px;
    height: 40px;
-   border-radius: 6px;
+   border-radius: var(--border-radius-sm);
    text-align: center;
-   padding-top: 0.50rem;
+   padding: 1rem;
 }
+
 .task-header .label{
    color: var(--color-primary);
-   padding-left: 12.5rem;
+   flex: 1;
 }
 
 .task-header .date{
-   font-size: 0.75rem;
+   font-size: 1rem;
    color: var(--color-date);
 }
 
 /* MAIN */
 
 .task-main{
-   padding: 0.5rem;
+   padding: 1rem;
 }
+
 .task-main .main__text{
-   font-size: 0.65rem;
+   font-size: 0.80rem;
    color: var(--color-date);
 }
 
@@ -98,34 +116,35 @@
 
 .task-footer .footer{
    display: flex;
-   /* justify-content: space-between; */
    align-items: center;
+   gap: 1rem;
+
 }
 
 
 .avatar{
    width: 40px;
    height: 40px;
-   border: 2px solid #fff;
-   border-radius: 32px;
+   border: 0;
+   border-radius: var(--border-radius-md);
 }
 
 .text{
-   margin-left: 11rem;
+  display: flex;
+  align-items: center;
+  flex: 1;
 }
 
 .task-footer .btn{
    background-color: var(--color-btn);
-   color: #fff;
-   padding: 1.5rem 2.5rem;
-   margin:  1rem 1rem;
-   width: 50px;
-   height: 50px;
-   border-radius: 8px;
+   color: var(--color-avatar);
+   padding:1rem;
+   border-radius: var(--border-radius-md);
    border: 0;
    outline: 0;
    cursor: pointer;
    text-align: center;
    white-space: nowrap;
    font-size: 1rem;
+   font-family: "vazir-Medium";
 }
